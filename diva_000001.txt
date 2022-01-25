@@ -1,0 +1,80 @@
+#name
+happy
+#length
+500 
+#interpolation
+nearest
+#F0_control
+0 
+#F0_min
+0 
+#F0_max
+200 
+#F1_control
+200 300 400 
+#F1_min
+650 0 200 
+#F1_max
+800 800 300 
+#F2_control
+200 300 400 
+#F2_min
+1500 0 2100 
+#F2_max
+1700 2500 2500 
+#F3_control
+200 300 400 
+#F3_min
+2500 0 2500 
+#F3_max
+3500 3500 3500 
+#pressure_control
+0 
+#pressure_min
+0.8 
+#pressure_max
+1 
+#voicing_control
+0 200 300 400 
+#voicing_min
+-0.8 1 -0.8 1 
+#voicing_max
+-1 0.8 -1 0.8 
+#PA_pharyngeal_control
+0 
+#PA_pharyngeal_min
+-1 
+#PA_pharyngeal_max
+-0.25 
+#PA_uvular_control
+0 
+#PA_uvular_min
+-1 
+#PA_uvular_max
+-0.25 
+#PA_velar_control
+0 
+#PA_velar_min
+-1 
+#PA_velar_max
+-0.25 
+#PA_palatal_control
+0 
+#PA_palatal_min
+-1 
+#PA_palatal_max
+-0.25 
+#PA_alveolardental_control
+0 
+#PA_alveolardental_min
+-1 
+#PA_alveolardental_max
+-0.25 
+#PA_labial_control
+200 300 400 
+#PA_labial_min
+-1 0.25 -1 
+#PA_labial_max
+-0.25 1 -0.25 
+#wrapper
+0 

@@ -1,0 +1,10 @@
+graph:{
+  title:"classes_DIVA"
+  layoutalgorithm:dfs
+  late_edge_labels:yes
+  port_sharing:no
+  manhattan_edges:yes
+  node: {title:"main.DIVA"  label:"\fbDIVA\fn\n\f_________________________________________________\n\f08aud_err_map : AuditoryErrorMap, NoneType\n\f08aud_state_map : NoneType, AuditoryStateMap\n\f08cerebellum : NoneType, Cerebellum\n\f08filetype : str\n\f08motor_cortex : MotorCortex, NoneType\n\f08production_art : NoneType, list\n\f08production_ids : list\n\f08production_idx : int\n\f08production_info : list, NoneType\n\f08production_labels : list\n\f08production_log : dict\n\f08simCtr : int\n\f08sim_speed_scale : int\n\f08som_err_map : NoneType, SomatosensoryErrorMap\n\f08som_state_map : NoneType, SomatosensoryStateMap\n\f08ssm : SpeechSoundMap, NoneType\n\f08targetCSV : str\n\f08vocal_tract : NoneType, VocalTract\n\f_________________________________________________\n\f10ChangeProduction()\n\f10ListTargets()\n\f10LoadTarget()\n\f10MenuLoop()\n\f10PlayLast()\n\f10PrepareSimulation()\n\f10ProcessInput()\n\f10PromptProduction()\n\f10ResetTarget()\n\f10SaveLog()\n\f10SaveLogNoPrompt()\n\f10ShowMenu()\n\f10StartSim()\n\f10diva_vocaltract()\n\f10production()\n\f10reset()"
+  shape:box
+  }
+}

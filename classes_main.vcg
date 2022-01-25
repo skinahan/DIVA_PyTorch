@@ -1,0 +1,7 @@
+graph:{
+  title:"classes_main"
+  layoutalgorithm:dfs
+  late_edge_labels:yes
+  port_sharing:no
+  manhattan_edges:yes
+}
