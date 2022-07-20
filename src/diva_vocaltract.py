@@ -843,10 +843,10 @@ class VocalTract(sb.SignalBlock):
             # sample articulatory parameters
 
             if synth.samplesoutput >= 1104:
-                nahMon = 43
+                firstStop = True
 
             if synth.samplesoutput >= 1196:
-                jahMon = 33
+                secondStop = True
 
             t0 = math.floor(time / dt)
             t1 = (time - t0 * dt) / dt
@@ -1081,7 +1081,7 @@ class VocalTract(sb.SignalBlock):
                 select_size = end_out_idx - start_out_idx
 
                 if end_out_idx >= 1197:
-                    jahMon = 332
+                    errPos = True
 
                 v_sum = v.sum()
                 if v_sum > max_v_sum:
@@ -1155,9 +1155,7 @@ class VocalTract(sb.SignalBlock):
                 som_out = torch.tensor([], dtype=torch.float64)
                 outl_out = torch.tensor([], dtype=torch.float64, device=cuda0)
                 af_out = torch.tensor([], dtype=torch.float64)
-                for i in range(ndata):
-                    if i == 12:
-                        jahMon = 22
+                for i in range(ndata):                    
                     aud_new, som_new, outline_new, af_new, d_new = self.diva_synth_sample(art[:, i], 2)
                     aud_out = torch.cat((aud_out, aud_new), 1)
                     som_out = torch.cat((som_out, som_new), 1)

@@ -22,7 +22,7 @@ class TestSomatosensoryErrorMap(TestCase):
             som_err_map.InputPorts[0] = target_in
             som_err_map.InputPorts[1] = cs_in
             if i == 110:
-                jah = 32
+                endSequence = True
             som_err_map.output()
             sem_output_actual = som_err_map.OutputPorts[0]
             if len(sem_output_actual.size()) == 1:
