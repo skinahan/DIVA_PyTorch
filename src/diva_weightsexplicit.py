@@ -36,7 +36,7 @@ class ExplicitWeightBlock(sb.SignalBlock):
 
         num_nonzero_x = torch.nonzero(x).size(0)
         if num_nonzero_x > 0:
-            jah = 32
+            beginSeq = True
 
         if len(x.size()) == 1:
             x = x.unsqueeze(1)

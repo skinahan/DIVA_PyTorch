@@ -44,7 +44,7 @@ class ErrorMap(sb.SignalBlock):
 
         num_nonzero = torch.nonzero(current_state).size(0)
         if num_nonzero > 0:
-            jah = 43
+            beginSequence = True
 
         current_state = torch.transpose(current_state, 0, 1)
 

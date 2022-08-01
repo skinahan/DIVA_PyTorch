@@ -22,7 +22,7 @@ class TestAuditoryErrorMap(TestCase):
             aud_err_map.InputPorts[0] = target_in
             aud_err_map.InputPorts[1] = cs_in
             if i == 110:
-                jah = 32
+                endSequence = True
             aud_err_map.output()
             aem_output_actual = aud_err_map.OutputPorts[0]
             if len(aem_output_actual.size()) == 1:
