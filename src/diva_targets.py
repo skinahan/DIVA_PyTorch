@@ -58,6 +58,12 @@ class diva_targets:
         return production_info
 
     def interpolate(self, x0, y0, x, interpolation):
+        x_shape = np.shape(x0)
+        y_shape = np.shape(y0)
+        if len(x_shape) == 1:
+            x0 = np.expand_dims(x0, 1)
+        # if len(y_shape) == 1:
+        #     y0 = np.expand_dims(y0, 1)
         x0 = x0[:]
         y0 = y0[:]
         x = x[:]
@@ -68,7 +74,7 @@ class diva_targets:
         idx = np.argsort(x0)
         x0 = np.sort(x0)
         y0 = y0[idx]
-        end = len(x0)-1
+        end = len(x0) - 1
         idx = np.nonzero(x0[1:end] == x0[0:end - 1])
         x0[idx] = x0[idx] + np.spacing(1)
         if np.min(x0) > 0:
@@ -81,7 +87,7 @@ class diva_targets:
             interpolation = 'linear'
         if len(x0) <= 1:
             interpolation = 'nearest'
-        #y = interp1d(x0, y0, x, kind=interpolation)
+        # y = interp1d(x0, y0, x, kind=interpolation)
         y = np.interp(x.flatten(), x0.flatten(), y0.flatten())
         y = np.expand_dims(y, axis=1)
         return y
@@ -101,12 +107,21 @@ class diva_targets:
                 control_label = params_info.Plots_label[n] + '_control'
                 min_label = params_info.Plots_label[n] + '_min'
                 max_label = params_info.Plots_label[n] + '_max'
-                base_x0 = int(production_info[control_label])
+                base_x0 = production_info[control_label]
                 if isinstance(base_x0, list):
-                    base_x0 = base_x0[0]
-                x0 = base_x0 + wrapper
-                x1 = float(production_info[min_label])
-                x2 = float(production_info[max_label])
+                    base_x0 = int(base_x0[0])
+                else:
+                    if isinstance(base_x0, str):
+                        base_x0 = [float(i) for i in base_x0.split()]
+                x0 = base_x0  # + wrapper
+
+                if isinstance(production_info[min_label], str):
+                    x1 = [float(i) for i in production_info[min_label].split()]
+                # x1 = float(production_info[min_label])
+                if isinstance(production_info[max_label], str):
+                    x2 = [float(i) for i in production_info[max_label].split()]
+                # x2 = float(production_info[max_label])
+
                 if isinstance(x0, int) or isinstance(x0, float):
                     x0 = [x0]
                 if isinstance(x1, int) or isinstance(x1, float):
@@ -152,6 +167,6 @@ class diva_targets:
         if prod_info is None:
             prod_info = self.init_struct()
         if ftype == 'txt':
-                return prod_info
+            return prod_info
         if ftype == 'mat':
-                return self.timeseries(prod_info, True)
+            return self.timeseries(prod_info, True)

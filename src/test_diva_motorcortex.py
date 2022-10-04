@@ -15,7 +15,8 @@ class TestMotorCortex(TestCase):
             matlab_out_name = input("Please enter name of the .mat file containing export data...")
             num_runs = input("Please enter the number of test points...")
             num_runs = int(num_runs)
-            exported_data = diva_utils.read_file_parameter_alternate(folder_name + '/' + matlab_out_name + '.mat', "runs")
+            exported_data = diva_utils.read_file_parameter_alternate(folder_name + '/' + matlab_out_name + '.mat',
+                                                                     "runs")
             print("LOSS FOR SAMPLES VT0-VT19: " + folder_name + "/" + matlab_out_name)
             losses = []
             loss = nn.MSELoss()
@@ -81,8 +82,10 @@ class TestMotorCortex(TestCase):
             matlab_out_name2 = input("Please enter name of the second .mat file containing export data...")
             num_runs = input("Please enter the number of test points...")
             num_runs = int(num_runs)
-            exported_data = diva_utils.read_file_parameter_alternate(folder_name + '/' + matlab_out_name + '.mat', "runs")
-            exported_data_2 = diva_utils.read_file_parameter_alternate(folder_name + '/' + matlab_out_name2 + '.mat', "runs")
+            exported_data = diva_utils.read_file_parameter_alternate(folder_name + '/' + matlab_out_name + '.mat',
+                                                                     "runs")
+            exported_data_2 = diva_utils.read_file_parameter_alternate(folder_name + '/' + matlab_out_name2 + '.mat',
+                                                                       "runs")
             print("LOSS FOR SAMPLES VT0-VT19: " + folder_name + "/" + matlab_out_name)
             losses = []
             for i in range(num_runs):

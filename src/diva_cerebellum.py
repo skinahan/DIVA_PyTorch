@@ -9,7 +9,7 @@ import diva_utils
 # This delay is implemented using Discrete FIR Blocks
 class Cerebellum(sb.SignalBlock):
 
-    def __init__(self):
+    def __init__(self, num_steps):
         sb.SignalBlock.__init__(self)
         self.set_inputs(1)
         self.set_outputs(1)
@@ -21,8 +21,9 @@ class Cerebellum(sb.SignalBlock):
         #ss_coeff = torch.flatten(self.diva_hanning(5, 0.5, 0.95))
         ss_N = 5 + 1 + 100
 
-        self.LDA = fb.FIRBlock(aud_N, aud_coeff, 110)
-        self.LDS = fb.FIRBlock(ss_N, ss_coeff, 104)
+        # filter length, coefficients, shiftval, number of steps
+        self.LDA = fb.FIRBlock(aud_N, aud_coeff, 110, num_steps)
+        self.LDS = fb.FIRBlock(ss_N, ss_coeff, 104, num_steps)
 
         self.dataBuffer = []
         initSig = torch.zeros(101).to(torch.float64)
