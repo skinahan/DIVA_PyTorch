@@ -384,6 +384,12 @@ class DIVA:
         if str_arg == "last":
             self.PlayLast()
             return
+        if str_arg == "test_runs":
+            for i in range(20):
+                self.StartSim(False, None, False)
+            self.SaveLogNoPrompt()
+            print("Exiting...")
+            sys.exit(0)
         if str_arg == "runs":
             for prod_idx in range(6, 506):
                 prod_changed = self.ChangeProductionIdx(prod_idx)

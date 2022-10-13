@@ -748,11 +748,11 @@ class VocalTract(sb.SignalBlock):
         base_tens = torch.from_numpy(self.vt['Base']).to(torch.complex64)
         base_tens = torch.narrow(base_tens, 1, 0, 10)
         base_tens = base_tens.to(torch.complex64).cuda()
-        #base_tens = torch.tensor(base_tens, dtype=torch.complex64, device=cuda0)
+        # base_tens = torch.tensor(base_tens, dtype=torch.complex64, device=cuda0)
         x = x.to(torch.complex64).cuda()
-        #x = torch.tensor(x, dtype=torch.complex64, device=cuda0)
+        # x = torch.tensor(x, dtype=torch.complex64, device=cuda0)
         avg_tens = avg_tens.to(torch.complex64).cuda()
-        #avg_tens = torch.tensor(avg_tens, dtype=torch.complex64, device=cuda0)
+        # avg_tens = torch.tensor(avg_tens, dtype=torch.complex64, device=cuda0)
         outline = torch.matmul(base_tens, x)
         outline = avg_tens + outline
 
@@ -1060,7 +1060,7 @@ class VocalTract(sb.SignalBlock):
                 else:
                     v = torch.tensor([])
 
-                #v0 = torch.tensor(v0, dtype=torch.float64)
+                # v0 = torch.tensor(v0, dtype=torch.float64)
                 v = torch.cat((v0, v), 0)
 
                 randn_v = torch.randn(v.size()[0])
@@ -1190,7 +1190,7 @@ class VocalTract(sb.SignalBlock):
 
         return y, z
 
-    def dosound(self, x, display):
+    def dosound(self, x, display, fname, save_file):
         if display is None:
             display = False
 
@@ -1222,7 +1222,6 @@ class VocalTract(sb.SignalBlock):
         write(file_name, 11025, aud)
 
         self.last_prod = y
-
 
         sd.play(y.flatten(), 11025)
         sd.wait()
