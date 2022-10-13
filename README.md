@@ -13,6 +13,10 @@ This simplified schematic illustrates the combination of the feedforward and fee
 
 ![DIVA Structural Diagram](https://user-images.githubusercontent.com/14182023/195723655-dcccfca5-20f2-4533-b25d-2e19a3ca942a.png)
 
+# Model Validation
+
+[An example can be viewed here](src/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model.
+
 # Setup
 The following section lists the requirements for working with TorchDIVA.
 
