@@ -50,13 +50,13 @@ conda activate DIVAProject-clean
 
 # Usage
 
-Run main.py using the python command-line or IDE of your choice.
+1. Run main.py using the python command-line or IDE of your choice.
 
 ```
 cd src/
 python ./main.py
 ```
-You will be greeted by a menu like the following:
+2. You will be greeted by a menu like the following:
 
 ```
 = PyTorch DIVA Implementation Menu =
@@ -75,5 +75,7 @@ q    :   quit
 
 Note: If you see any error message on startup, you may be missing a dependency. Verify that you have successfully created and activated the conda virtual environment before running TorchDIVA.
 
-Use the menu options available to interact with the TorchDIVA model:
-Select speech targets, run speech simulations, etc.
+3. Use the menu options available to interact with the TorchDIVA model:
+List/select speech targets, run speech simulations, etc.
+
+4. Enter 'q' at the main menu to quit the main program loop.
