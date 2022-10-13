@@ -15,7 +15,7 @@ This simplified schematic illustrates the combination of the feedforward and fee
 
 # Model Validation
 
-[An example can be viewed here](src/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model.
+[An example can be viewed here](src/notebooks/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model.
 
 # Setup
 The following section lists the requirements for working with TorchDIVA.
