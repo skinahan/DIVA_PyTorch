@@ -15,7 +15,7 @@ This simplified schematic illustrates the combination of the feedforward and fee
 
 # Model Validation
 
-[An example can be viewed here](src/notebooks/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model. Apart from the motor cortex module, all TorchDIVA modules produce equivalent output to their corresponding Matlab module.
+[An example can be viewed here](src/notebooks/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model. Apart from the motor cortex module, all TorchDIVA modules produce equivalent output to their corresponding Matlab module. The source of this deviation is a minor difference in numerical precision between PyTorch and Matlab.
 
 # Setup
 The following section lists the requirements for working with TorchDIVA.
