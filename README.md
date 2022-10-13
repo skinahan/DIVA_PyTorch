@@ -1,4 +1,4 @@
-# DIVA_PyTorch
+# TorchDIVA
 Implementation of the [DIVA model of speech acquisition and production](https://sites.bu.edu/guentherlab/research-projects/the-diva-model-of-speech-motor-control/) using PyTorch.
 
 # Overview
@@ -7,7 +7,11 @@ DIVA is a popular computational model based on neural networks for better unders
 
 This repository contains the source code for TorchDIVA, a fully functional recreation of the original DIVA model.
 
-# Architecture
+# Model Architecture
+
+This simplified schematic illustrates the combination of the feedforward and feedback control loops in the DIVA model.
+
+![DIVA Structural Diagram](https://user-images.githubusercontent.com/14182023/195723655-dcccfca5-20f2-4533-b25d-2e19a3ca942a.png)
 
 # Setup
 The following section lists the requirements for working with TorchDIVA.
