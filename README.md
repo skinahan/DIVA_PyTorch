@@ -7,6 +7,9 @@ The DIVA model is a computational model of speech motor control that combines a 
 
 We present the source code for TorchDIVA, a full rebuild of DIVA in Python using PyTorch tensors. DIVA source code was directly translated from Matlab to Python, and built-in Simulink signal blocks were implemented from scratch. After implementation, the accuracy of each module was evaluated via systematic block-by-block validation. The TorchDIVA model is shown to produce outputs that closely match those of the original DIVA model, with a negligible level of error.
 
+# Demo
+[This python notebook](https://colab.research.google.com/drive/1YJPNJzjERirTD3zQw3pdTW0AiZjj4GDd?usp=sharing) can be used to experiment with the TorchDIVA model in the browser using Google Colab. A Google account is required to use Google Colab.
+
 # Model Architecture
 
 This simplified schematic illustrates the combination of the feedforward and feedback control loops in the DIVA model.
@@ -15,10 +18,10 @@ This simplified schematic illustrates the combination of the feedforward and fee
 
 # Model Validation
 
-[An example can be viewed here](src/notebooks/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model. Apart from the motor cortex module, all TorchDIVA modules produce equivalent output to their corresponding Matlab module. The source of this deviation is a minor difference in numerical precision between PyTorch and Matlab.
+[An example can be viewed here](src/notebooks/motor-mse-demo.ipynb) of how the motor command signal difference between TorchDIVA and the original Matlab DIVA model was computed. Apart from the motor cortex module, all TorchDIVA modules produce equivalent output to their corresponding Matlab module. The source of this deviation is a minor difference in numerical precision between PyTorch and Matlab.
 
 # Setup
-The following section lists the requirements for working with TorchDIVA.
+The following section lists the requirements for working with TorchDIVA in a local development environment.
 
 # Requirements
 - [Conda package and environment manager]()
@@ -79,3 +82,12 @@ Note: If you see any error message on startup, you may be missing a dependency. 
 List/select speech targets, run speech simulations, etc.
 
 4. Enter 'q' at the main menu to quit the main program loop.
+
+# Contributing to TorchDIVA
+
+1. Follow the steps above to set up the TorchDIVA repository locally for development.
+2. Create a branch for your feature with a descriptive name (e.g. sensory-delay-block).
+3. Submit a pull request (PR) to merge your feature branch into the main branch.
+4. When your PR is approved:
+- Your changes will merge into the main development branch .
+- Your feature branch will be deleted.
