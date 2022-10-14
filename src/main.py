@@ -101,12 +101,12 @@ class DIVA:
         params_output = params_obj.Output
         # Auditory Params
         params_output_1_obj = params_output[0, 0]
-        auditory_scale = params_output_1_obj.Scale.astype(np.float)
+        auditory_scale = params_output_1_obj.Scale.astype(float)
         auditory_scale = torch.from_numpy(auditory_scale)
 
         # Somatosensory Params
         params_output_2_obj = params_output[0, 1]
-        somato_scale = params_output_2_obj.Scale.astype(np.float)
+        somato_scale = params_output_2_obj.Scale.astype(float)
         somato_scale = torch.from_numpy(somato_scale)
 
         diag_aud = (1.0 / auditory_scale).diagflat()
@@ -131,7 +131,7 @@ class DIVA:
         range_aud_col1 = range_aud[:, :1]
         range_aud_col2 = range_aud[:, 1:2]
 
-        aud_min_tensor = torch.from_numpy(self.production_art['Aud_min'].astype(np.float))
+        aud_min_tensor = torch.from_numpy(self.production_art['Aud_min'].astype(float))
         W = torch.matmul(aud_min_tensor, diag_aud)
         W0 = range_aud_col1 / auditory_scale
         wdict['W'] = W.numpy()
@@ -139,7 +139,7 @@ class DIVA:
         diva_utils.write_file("diva_weights_SSM2amin.mat", wdict)
         # save diva_weights_SSM2amin.mat W W0
 
-        aud_max_tensor = torch.from_numpy(self.production_art['Aud_max'].astype(np.float))
+        aud_max_tensor = torch.from_numpy(self.production_art['Aud_max'].astype(float))
         W = torch.matmul(aud_max_tensor, diag_aud)
         W0 = range_aud_col2 / auditory_scale
         wdict['W'] = W.numpy()
@@ -151,7 +151,7 @@ class DIVA:
         range_som_col1 = range_som[:, :1]
         range_som_col2 = range_som[:, 1:2]
 
-        som_min_tensor = torch.from_numpy(self.production_art['Som_min'].astype(np.float))
+        som_min_tensor = torch.from_numpy(self.production_art['Som_min'].astype(float))
         W = torch.matmul(som_min_tensor, diag_som)
         W0 = range_som_col1 / somato_scale
         wdict['W'] = W.numpy()
@@ -159,7 +159,7 @@ class DIVA:
         diva_utils.write_file("diva_weights_SSM2smin.mat", wdict)
         # save diva_weights_SSM2smin.mat W W0
 
-        som_max_tensor = torch.from_numpy(self.production_art['Som_max'].astype(np.float))
+        som_max_tensor = torch.from_numpy(self.production_art['Som_max'].astype(float))
         W = torch.matmul(som_max_tensor, diag_som)
         W0 = range_som_col2 / somato_scale
         wdict['W'] = W.numpy()
