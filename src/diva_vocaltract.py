@@ -1232,7 +1232,7 @@ class VocalTract(sb.SignalBlock):
 
         if IN_COLAB:
           print('Running on CoLab, sound will not play interactively.')
-          #from IPython.display import display, Audio
+          from IPython.display import display, Audio
           display(Audio(file_name, autoplay=True))
         else:
             print('Not running on CoLab')
