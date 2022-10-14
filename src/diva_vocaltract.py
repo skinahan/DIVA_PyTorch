@@ -1219,12 +1219,25 @@ class VocalTract(sb.SignalBlock):
         y_min = torch.min(y)
         aud = y.flatten().numpy()
         aud = (aud * (2 ** 15 - 1)).astype("<h")
+        print(f'Writing audio output: {file_name}')
         write(file_name, 11025, aud)
 
         self.last_prod = y
 
-        sd.play(y.flatten(), 11025)
-        sd.wait()
+        try:
+          import google.colab
+          IN_COLAB = True
+        except:
+          IN_COLAB = False
+
+        if IN_COLAB:
+          print('Running on CoLab, sound will not play interactively.')
+          #from IPython.display import display, Audio
+          display(Audio(file_name, autoplay=True))
+        else:
+            print('Not running on CoLab')
+            sd.play(y.flatten(), 11025)
+            sd.wait()
 
     def PlayLast(self):
         if self.last_prod is not None:
