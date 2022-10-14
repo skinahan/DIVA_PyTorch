@@ -89,5 +89,5 @@ List/select speech targets, run speech simulations, etc.
 2. Create a branch for your feature with a descriptive name (e.g. sensory-delay-block).
 3. Submit a pull request (PR) to merge your feature branch into the main branch.
 4. When your PR is approved:
-- Your changes will merge into the main development branch .
+- Your changes will merge into the main development branch.
 - Your feature branch will be deleted.
