@@ -152,6 +152,8 @@ class SpeechSoundMap(sb.SignalBlock):
         # W0 = self.bias
         W = W.to(torch.float64)
         masked = W0.to(torch.float64)
+        masked = masked[None, :]
+        
         if (torch.max(torch.abs(x))) < 1e-10:  # bias term (if no input)
             # print("no input")
             masked = W0
