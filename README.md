@@ -3,9 +3,9 @@ Implementation of the [DIVA model of speech acquisition and production](https://
 
 # Overview
 
-DIVA is a popular computational model based on neural networks for better understanding the processes of human speech acquisition and production. The publicly available implementation of DIVA was originally done in Matlab. Recently, neural networks have become increasingly more popular, with new open-source frameworks available to researchers for development. As Matlab is rarely used in this context, we propose to extend the usability of DIVA by implementing it in the Python machine learning framework, PyTorch. 
+The DIVA model is a computational model of speech motor control that combines a simulation of the brain regions responsible for speech production with a model of the human vocal tract. The model is currently implemented in Matlab Simulink; however, this is less than ideal as most of the development in speech technology research is done in Python. This means there is a wealth of machine learning tools which are freely available in the Python ecosystem that cannot be integrated with DIVA. 
 
-This repository contains the source code for TorchDIVA, a fully functional recreation of the original DIVA model.
+We present the source code for TorchDIVA, a full rebuild of DIVA in Python using PyTorch tensors. DIVA source code was directly translated from Matlab to Python, and built-in Simulink signal blocks were implemented from scratch. After implementation, the accuracy of each module was evaluated via systematic block-by-block validation. The TorchDIVA model is shown to produce outputs that closely match those of the original DIVA model, with a negligible level of error.
 
 # Model Architecture
 
@@ -15,7 +15,7 @@ This simplified schematic illustrates the combination of the feedforward and fee
 
 # Model Validation
 
-[An example can be viewed here](src/notebooks/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model.
+[An example can be viewed here](src/notebooks/motor-mse-demo.ipynb) of the motor command signal difference between TorchDIVA and the original Matlab DIVA model. Apart from the motor cortex module, all TorchDIVA modules produce equivalent output to their corresponding Matlab module. The source of this deviation is a minor difference in numerical precision between PyTorch and Matlab.
 
 # Setup
 The following section lists the requirements for working with TorchDIVA.
@@ -50,13 +50,13 @@ conda activate DIVAProject-clean
 
 # Usage
 
-Run main.py using the python command-line or IDE of your choice.
+1. Run main.py using the python command-line or IDE of your choice.
 
 ```
 cd src/
 python ./main.py
 ```
-You will be greeted by a menu like the following:
+2. You will be greeted by a menu like the following:
 
 ```
 = PyTorch DIVA Implementation Menu =
@@ -75,5 +75,7 @@ q    :   quit
 
 Note: If you see any error message on startup, you may be missing a dependency. Verify that you have successfully created and activated the conda virtual environment before running TorchDIVA.
 
-Use the menu options available to interact with the TorchDIVA model:
-Select speech targets, run speech simulations, etc.
+3. Use the menu options available to interact with the TorchDIVA model:
+List/select speech targets, run speech simulations, etc.
+
+4. Enter 'q' at the main menu to quit the main program loop.
