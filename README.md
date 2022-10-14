@@ -24,7 +24,7 @@ This simplified schematic illustrates the combination of the feedforward and fee
 The following section lists the requirements for working with TorchDIVA in a local development environment.
 
 # Requirements
-- [Conda package and environment manager]()
+- Conda (Recommended): [Anaconda Navigator](https://docs.anaconda.com/navigator/)
 - Python 3.7
 - Operating System: Windows 10
 - (Recommended) Python IDE
