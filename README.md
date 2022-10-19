@@ -1,6 +1,8 @@
 # TorchDIVA
 Implementation of the [DIVA model of speech acquisition and production](https://sites.bu.edu/guentherlab/research-projects/the-diva-model-of-speech-motor-control/) using PyTorch.
 
+Note: If you use this repo in your own project, please cite the original paper [which can be found here](https://arxiv.org/abs/2210.09334).
+
 # Overview
 
 The DIVA model is a computational model of speech motor control that combines a simulation of the brain regions responsible for speech production with a model of the human vocal tract. The model is currently implemented in Matlab Simulink; however, this is less than ideal as most of the development in speech technology research is done in Python. This means there is a wealth of machine learning tools which are freely available in the Python ecosystem that cannot be integrated with DIVA. 
