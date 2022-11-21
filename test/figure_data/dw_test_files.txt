@@ -1,0 +1,10 @@
+1_n_w_20_1_a_h.wav
+1_n_w_20_1_a_n.wav
+1_n_w_20_1_i_h.wav
+1_n_w_20_1_i_l.wav
+1_n_w_20_1_i_n.wav
+1_n_w_20_1_u_h.wav
+1_n_w_20_1_u_l.wav
+2_n_w_22_2_i_h.wav
+2_n_w_22_2_i_l.wav
+2_n_w_22_2_u_h.wav
